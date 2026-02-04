@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PushObject3D_Lab5 : MonoBehaviour
+public class PushObject3D : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float force = 10f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Rigidbody>()
+                .AddForce(Vector3.forward * force, ForceMode.Impulse);
+        }
     }
 }
